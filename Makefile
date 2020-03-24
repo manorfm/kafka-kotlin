@@ -14,4 +14,10 @@ clean-untagged-images:
 	
 build-run: build run
 
+stop:
+	docker-compose down
 
+logs:
+	docker-compose logs -f
+
+build-run-logs: build-run logs

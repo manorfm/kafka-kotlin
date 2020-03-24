@@ -2,7 +2,7 @@
 spring:
   kafka:
     bootstrap-servers:
-      - localhost:9092
+      - ${KAFKA_HOST:kafka}:9092
     template:
       default-topic: simple-message-topic
     producer:
