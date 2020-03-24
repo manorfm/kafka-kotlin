@@ -5,7 +5,7 @@ import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Component
 
 @Component
-class KotlinConsumer {
+class Consumer {
     private val logger = LoggerFactory.getLogger(javaClass)
 
     @KafkaListener(topics = ["simple-message-topic"], groupId = "simple-kotlin-consumer")
