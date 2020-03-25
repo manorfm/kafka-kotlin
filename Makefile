@@ -2,15 +2,15 @@ run:
 	docker-compose up -d
 
 build-consumer:
-	$(MAKE) -C consumer build
+	$(MAKE) -C consumer build-all
 
 build-producer:
-	$(MAKE) -C producer build
+	$(MAKE) -C producer build-all
 
 build: build-consumer build-producer clean-untagged-images
 
 clean-untagged-images:
-	docker rmi $$(docker images | grep "^<none>" | awk '{print $$3}')
+	docker rmi $$(docker images -a | grep "^<none>" | awk '{print $$3}')
 	
 build-run: build run
 
