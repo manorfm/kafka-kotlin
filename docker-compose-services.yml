@@ -1,0 +1,19 @@
+version: '3.6'
+
+services:
+  consumer:
+    container_name: consumer
+    image: manorfm/consumer
+    networks:
+      - event-driven
+  producer:
+    container_name: producer
+    image: manorfm/producer
+    ports:
+      - 8080:8080
+    networks:
+      - event-driven
+
+networks:
+  event-driven:
+    external: true
